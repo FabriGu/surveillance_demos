@@ -1,6 +1,6 @@
 var osc = require('osc');
-var beep = require('beepbeep');
 
+// function for getting IP address on the local network
 var getIPAddresses = function () {
     var os = require("os"),
         interfaces = os.networkInterfaces(),
@@ -19,28 +19,28 @@ var getIPAddresses = function () {
     return ipAddresses;
 };
 
-const ipAddressess = getIPAddresses();
+const ipAddresses = getIPAddresses();
 
+// OSC needs to be sent via a UDP port so we set one up
 var udpPort = new osc.UDPPort({
-    localAddress: ipAddressess[0],
+    // this takes just the first IP address in case your router is giving your laptop more than one 
+    localAddress: ipAddresses[0],
     localPort: 8000
 }); 
 
 udpPort.on("ready", function () {
-    var ipAddresses = getIPAddresses();
 
     console.log("Listening for OSC over UDP.");
-    ipAddresses.forEach(function (address) {
-        console.log(" Host:", address + ", Port:", udpPort.options.localPort);
-    });
+    console.log("Host:", udpPort.options.localAddress + ", Port:", udpPort.options.localPort) 
+    console.log("Put the host address - which is your local ip address - into Touch OSC") 
 });
 
 udpPort.on("message", function (oscMessage) {
-    // console.log(oscMessage);
-    // console.log(oscMessage.args[1]);
+    // prints out the accelerometer data 
+    console.log(oscMessage);
+    // sends a message whenever the phone is picked up 
     if(oscMessage.args[1]< -0.1){
-      beep();
-      console.log('put your phone down what are you doing');
+      console.log('put your phone down');
     }
 });
 
