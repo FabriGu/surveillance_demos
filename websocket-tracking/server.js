@@ -43,6 +43,12 @@ io.sockets.on('connection',
 				}
 			}
 		);
+		socket.on('finger', 
+			// Run this function when a message is sent
+			function (data) {
+				console.log(data);
+			}
+		);
 				
 		socket.on('disconnect', function() {
 			console.log("Client has disconnected");
