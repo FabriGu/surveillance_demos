@@ -1,0 +1,61 @@
+<!-- popup.html -->
+<!DOCTYPE html>
+<html>
+
+<head>
+    <style>
+        body {
+            width: 250px;
+            padding: 10px;
+            font-family: Arial, sans-serif;
+            background-color: white;
+        }
+
+        button {
+            width: 100%;
+            padding: 8px;
+            margin-top: 10px;
+            background-color: #8c18a3;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #a674b0;
+        }
+
+        .status {
+            margin-top: 15px;
+            padding: 5px;
+            text-align: center;
+            font-weight: bold;
+        }
+
+        .training {
+            background-color: #ffe0b2;
+        }
+
+        .active {
+            background-color: #b9f6ca;
+        }
+
+        h2 {
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <h2>Eye-Tracking Element Tag Game</h2>
+    <p>Click where you're looking to train the eye tracker.</p>
+    <button id="startTraining">Start Training</button>
+    <button id="activateGame">Activate Tag Game</button>
+    <button id="stopGame">Stop Game</button>
+    <div id="status" class="status">Extension ready</div>
+
+    <script src="popup.js"></script>
+</body>
+
+</html>

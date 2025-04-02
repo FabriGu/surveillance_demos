@@ -1,0 +1,77 @@
+/* content.css - Styles for the eye tracking tag game extension */
+
+/* WebGazer video container positioning and styling */
+#webgazerVideoContainer {
+    position: fixed !important;
+    top: 10px !important;
+    left: 10px !important;
+    z-index: 9999 !important;
+    width: 200px !important;
+    height: 150px !important;
+    overflow: hidden !important;
+    border: 2px solid red !important;
+    background-color: rgba(0, 0, 0, 0.2) !important;
+}
+
+/* Style for the calibration dot */
+.webgazerGazeDot {
+    position: fixed !important;
+    z-index: 10000 !important;
+    width: 10px !important;
+    height: 10px !important;
+    border-radius: 50% !important;
+    background-color: red !important;
+    pointer-events: none !important;
+}
+
+/* Training indicator - shows where the system thinks you're looking */
+#eye-tracker-indicator {
+    position: fixed !important;
+    z-index: 10000 !important;
+    width: 20px !important;
+    height: 20px !important;
+    border-radius: 50% !important;
+    background-color: rgba(255, 0, 0, 0.5) !important;
+    border: 2px solid rgba(255, 0, 0, 0.8) !important;
+    transform: translate(-50%, -50%) !important;
+    pointer-events: none !important;
+    box-shadow: 0 0 10px rgba(255, 0, 0, 0.5) !important;
+}
+
+/* Status overlay for messages */
+#eye-tracker-status {
+    position: fixed !important;
+    bottom: 20px !important;
+    right: 20px !important;
+    background-color: rgba(0, 0, 0, 0.7) !important;
+    color: white !important;
+    padding: 10px 15px !important;
+    border-radius: 5px !important;
+    font-family: Arial, sans-serif !important;
+    font-size: 14px !important;
+    z-index: 10001 !important;
+    pointer-events: none !important;
+}
+
+/* Add a smooth transition effect to all elements */
+.eye-tracker-movable {
+    transition: transform 0.3s ease-out !important;
+}
+
+/* WebGazer face overlay styling */
+#webgazerFaceFeedbackBox {
+    border: 2px solid green !important;
+}
+
+/* WebGazer face feedback - these are used by WebGazer for face detection feedback */
+#webgazerFaceOverlay {
+    z-index: 10000 !important;
+}
+
+#webgazerFaceFeedbackBox.webgazerFaceFeedbackBoxGood {
+    border-color: green !important;
+}
+
+#webgazerFaceFeedbackBox.webgazerFaceFeedbackBoxBad {
+    border-color: red !important;
+}

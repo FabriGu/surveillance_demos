@@ -1,0 +1,35 @@
+{
+    "manifest_version": 3,
+    "name": "Eye-Tracking Tag Game",
+    "version": "1.0",
+    "description": "Makes elements move away from your gaze",
+    "permissions": ["activeTab", "scripting", "storage"],
+    "background": {
+        "service_worker": "background.js"
+    },
+    "action": {
+        "default_popup": "popup.html",
+        "default_icon": {
+        "16": "images/icon16.png",
+        "32": "images/icon32.png"
+        }
+    },
+    "icons": {
+        "16": "images/icon16.png",
+        "32": "images/icon32.png"
+    },
+    "content_scripts": [
+        {
+        "matches": ["<all_urls>"],
+        "js": ["content_script.js"],
+        "css": ["content.css"],
+        "run_at": "document_idle"
+        }
+    ],
+    "web_accessible_resources": [
+        {
+        "resources": ["webgazer.js", "main.js", "content.css"],
+        "matches": ["<all_urls>"]
+        }
+    ]
+}

@@ -1,0 +1,28 @@
+/* content.css */
+
+/* Make sure WebGazer's video feed is properly positioned */
+#webgazerVideoContainer {
+    position: fixed !important;
+    top: 0 !important;
+    left: 0 !important;
+    z-index: 9999 !important;
+    width: 320px !important;
+    height: 240px !important;
+    overflow: hidden !important;
+}
+
+/* Style for the calibration dot */
+.webgazerGazeDot {
+    position: fixed !important;
+    z-index: 10000 !important;
+    width: 10px !important;
+    height: 10px !important;
+    border-radius: 50% !important;
+    background-color: red !important;
+    pointer-events: none !important;
+}
+
+/* Add a visual cue for elements being tracked */
+*:hover {
+    outline: 1px dashed rgba(255, 0, 0, 0.3);
+}
